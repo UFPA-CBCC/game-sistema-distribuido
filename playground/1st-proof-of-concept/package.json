@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/filipedeschamps/meu-primeiro-jogo-multiplayer#readme",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "express": "^4.17.1",
+    "node-json-db": "^1.0.2",
     "nodemon": "^1.19.1",
     "socket.io": "^2.2.0"
   }
