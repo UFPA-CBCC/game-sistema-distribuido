@@ -1,8 +1,25 @@
-console.log('> Script started')
 const express = require('express')
 const webApp = express()
 const webServer = require('http').createServer(webApp)
+const bodyParser = require('body-parser')
 const io = require('socket.io')(webServer)
+
+const userRoutes = require('./userRoutes')
+
+webApp.use(bodyParser.json())
+
+/*
+* API users endpoints
+*/
+
+// create new user
+webApp.post('/api/register', userRoutes.register)
+
+// login
+webApp.post('/api/register', userRoutes.register)
+
+db.defaults({ users: [] })
+  .write()
 
 const game = createGame()
 let maxConcurrentConnections = 15
