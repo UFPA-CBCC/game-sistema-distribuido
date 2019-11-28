@@ -41,6 +41,14 @@ input{
     }
    }
 
+   @keyframes fadeout {
+    from{
+        opacity: 100%;
+    }
+    to{
+        opacity:0%; 
+    }
+   }
 .login-button{
     border: 2px solid #d6dadd;
      border-radius: 10%;
@@ -51,6 +59,10 @@ input{
 }
 .login-button:hover{
     background-color: #d6dadd;
+}
+
+.modal{
+    display: none;
 }
 
 .planet-glow{

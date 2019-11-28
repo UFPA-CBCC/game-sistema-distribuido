@@ -10,18 +10,37 @@
 </head>
 <body class="background">
     <section class="planet-glow"></section>
-    <h2 class="center-text fade-in">Por favor faça o login</h2>
+    <div id="login-model">
+        <h2 class="center-text fade-in">Por favor faça o login</h2>
         <section class="centered-box fade-in">
-            <form id='login-form'>
+            <form id="login-form">
                 <p class="label">Usuário</p>
                 <input id="username" type="text">
-                <p for="label">Senha</p>
+                <p class="label">Senha</p>
                 <input id="password" type="password">
                 <br/>
                 <br/>
-                <button class="login-button">Entrar</button>
+                <button id="sign-in" class="login-button">Cadastro</button>
+                <button id="login" class="login-button">Entrar</button>
             </form>
         </section>
+    </div>
+    <div id="sign-in-model" class="modal">
+        <h2 class="center-text">Cadastro</h2>
+        <div class='centered-box'>
+            <form id="sign-in-form">
+                    <p class="label">Nome de usuario</p>
+                    <input type="text" id="register-username">
+                    <p class="label">Senha</p>
+                    <input type="password" id="register-password">
+                    <br />
+                    <br />
+                    <button id="back-to-login" class="login-button">Voltar login</button>
+                    <button id="sign-in-submit" class="login-button">Cadastrar</button>
+            </form>
+        </div>
+    </div>
     <script type="module" src="/js/login.js"></script>
+
 </body>
 </html>
