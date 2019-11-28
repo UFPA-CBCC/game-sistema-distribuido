@@ -52,6 +52,20 @@ webApp.get('/100-collect.mp3', function(req, res){
   res.sendFile(__dirname + '/100-collect.mp3')
 })
 
+webApp.get('/login', function(req,res) {
+  res.sendFile(__dirname+'/login.html')
+})
+
+webApp.get('/css/login.css', function(req,res) {
+  res.sendFile(__dirname+'/css/login.css')
+})
+
+webApp.get('/assets/login-wallpaper.jpg', function(req,res) {
+  res.sendFile(__dirname+'/assets/login-wallpaper.jpg')
+})
+webApp.get('/js/login.js', function(req,res) {
+  res.sendFile(__dirname+'/js/login.js')
+})
 setInterval(() => {
   io.emit('concurrent-connections', io.engine.clientsCount)
 }, 5000)

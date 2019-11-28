@@ -25,5 +25,8 @@
     "lowdb": "^1.0.0",
     "nodemon": "^1.19.1",
     "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.1"
   }
 }
