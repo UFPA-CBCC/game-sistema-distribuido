@@ -1,8 +1,36 @@
-console.log('> Script started')
 const express = require('express')
 const webApp = express()
 const webServer = require('http').createServer(webApp)
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 const io = require('socket.io')(webServer)
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+
+const adapter = new FileSync('db.json')
+const db = low(adapter)
+
+const userRoutes = require('./userRoutes')
+
+webApp.use(bodyParser.json())
+
+/*
+* API users endpoints
+*/
+
+// create new user
+webApp.post('/api/register', userRoutes.register)
+
+// login
+webApp.post('/api/login', userRoutes.login)
+
+webApp.use(cookieParser(), userRoutes.authz)
+
+// get users
+webApp.get('/api/users', userRoutes.list)
+
+db.defaults({ users: [] })
+  .write()
 
 const game = createGame()
 let maxConcurrentConnections = 15
