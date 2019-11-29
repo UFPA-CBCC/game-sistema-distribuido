@@ -21,6 +21,7 @@ function register(req, res) {
     return
   }
 
+
   const userAlreadyExists = db.get('users')
     .find({username})
     .value()
