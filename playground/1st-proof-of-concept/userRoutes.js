@@ -76,9 +76,9 @@ async function login(req, res) {
   const userData = {username, password}
   const accessToken = await tokenSign(userData, rememberMe)
 
-  res.status(200).send({
-    accessToken
-  })
+  res.status(200)
+    .cookie('accessToken', accessToken)
+    .end()
 }
 
 /**
@@ -87,7 +87,6 @@ async function login(req, res) {
  * @param {Express.Response} res
  */
 function list(req, res) {
-  console.log('passed')
   const users = db.get('users').map('username').value()
   res.status(200).send(users)
 }
@@ -100,8 +99,14 @@ function list(req, res) {
  */
 async function authz(req, res, next) {
   const { accessToken } = req.cookies
-  console.log(accessToken)
-  await next()
+  try {
+    tokenVerify(accessToken)
+    await next()
+  } catch(e) {
+    res.status(400).send({
+      code: 'errOnAuthz'
+    })
+  }
 }
 
 module.exports = {register, login, authz, list}

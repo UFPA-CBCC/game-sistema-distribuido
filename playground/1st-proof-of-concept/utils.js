@@ -33,7 +33,7 @@ async function tokenSign(user, rememberMe, expiresIn = TIMEOUT) {
 function tokenVerify(token, rememberMeFactor = 30) {
   const tokenPayload = decode(token, { json: true })
   const maxAge = tokenPayload.rmb ? TIMEOUT * rememberMeFactor : TIMEOUT
-  return verify(token, secret, { maxAge })
+  verify(token, secret, { maxAge })
 }
 
 module.exports = {pick, tokenSign, tokenVerify}
