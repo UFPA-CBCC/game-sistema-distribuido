@@ -24,6 +24,21 @@ webApp.post('/api/register', userRoutes.register)
 // login
 webApp.post('/api/login', userRoutes.login)
 
+webApp.get('/login', function(req,res) {
+  res.sendFile(__dirname+'/login.html')
+})
+
+webApp.get('/css/login.css', function(req,res) {
+  res.sendFile(__dirname+'/css/login.css')
+})
+
+webApp.get('/assets/login-wallpaper.jpg', function(req,res) {
+  res.sendFile(__dirname+'/assets/login-wallpaper.jpg')
+})
+webApp.get('/js/login.js', function(req,res) {
+  res.sendFile(__dirname+'/js/login.js')
+})
+
 webApp.use(cookieParser(), userRoutes.authz)
 
 // get users
