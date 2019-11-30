@@ -7,46 +7,6 @@
     {
       "username": "user",
       "password": "$2b$10$ZRw3uzt/ab4F3j90T1bFsey9V.Fb3jEb0MDhjpolMTsSYAhe7goSC"
-    },
-    {
-      "username": "admin2",
-      "password": "$2b$10$C3z51s/WXp6qCumSrMnshe0t8LhVtH9MZ2KzzcvXYoXjHMVZBF57O"
-    },
-    {
-      "username": "asdas",
-      "password": "$2b$10$Oy7VYGc8e0G7vM5sTix0TeVDG9OZO/gJJpLDVy6GMHMytt7al5HmO"
-    },
-    {
-      "username": "admin3",
-      "password": "$2b$10$sLi.Y5m1sX44QObwK.biAO1ybE97a.1tPEAifbsJSvnldwLPw6.xO"
-    },
-    {
-      "username": "admin4",
-      "password": "$2b$10$J03jqioNfxSBP//O6B1SN.N3iiMkvqFVyAtJ3ZJQ8A/WNECXGOulO"
-    },
-    {
-      "username": "admin5",
-      "password": "$2b$10$aFep7Qi/18615zwNJWS1XeOoHGMDhDJLtJlBm4hAgVuwirqphUVUS"
-    },
-    {
-      "username": "admin56",
-      "password": "$2b$10$8VeqzQUnVb03HPpVSO1X0.Y9BadYGpIiHp/0OjENTdEYUiP32TXMi"
-    },
-    {
-      "username": "admin567",
-      "password": "$2b$10$ncVVvBKkZ9ap54qD5iWcx.U5.PKouLkYzUku3S.sTK1ast.Sedrfi"
-    },
-    {
-      "username": "admin5678",
-      "password": "$2b$10$rM/7bRzhoHeLUrhNLwdhmeHh8CosYDcslkYcBDUTIcCV2dTYHdLrC"
-    },
-    {
-      "username": "admin56789",
-      "password": "$2b$10$U3lozD9N02OnhjTWu6k6UOmoeWGWdE.hbSJIZ81wyGGq3hbXw7HkS"
-    },
-    {
-      "username": "admin7",
-      "password": "$2b$10$sKSPTptUxVftCKmTuwme2eYlNW8NS5T3.naX32.E7sAqqW3fSu7Qa"
     }
   ]
 }
