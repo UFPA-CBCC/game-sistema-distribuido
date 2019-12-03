@@ -78,6 +78,7 @@ async function login(req, res) {
 
   res.status(200)
     .cookie('accessToken', accessToken)
+    .cookie('username', userData.username)
     .end()
 }
 

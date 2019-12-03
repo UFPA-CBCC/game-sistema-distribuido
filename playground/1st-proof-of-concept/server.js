@@ -51,7 +51,10 @@ const game = createGame()
 let maxConcurrentConnections = 15
 
 webApp.get('/', function(req, res){
-  res.sendFile(__dirname + '/game.html')
+  res.sendFile(__dirname+'/login.html')
+})
+webApp.get('/game', function(req, res){
+  res.sendFile(__dirname+'/game.html')
 })
 
 // Coisas que só uma POC vai conhecer
@@ -74,7 +77,15 @@ setInterval(() => {
 
 io.on('connection', function(socket){
   const admin = socket.handshake.query.admin
-
+  const cookies= socket.client.request.headers.cookie.split(';')
+  let username = cookies.filter(val=>{
+    const value = val.split('=')
+    if(value[0] === ' username'){
+      return true
+    }
+  })
+  username = username[0].split('=')[1]
+  console.log(username)
   if (io.engine.clientsCount > maxConcurrentConnections && !admin) {
     socket.emit('show-max-concurrent-connections-message')
     socket.conn.close()
@@ -82,12 +93,13 @@ io.on('connection', function(socket){
   } else {
     socket.emit('hide-max-concurrent-connections-message')
   }
-  const playerState = game.addPlayer(socket.id)
+  const playerState = game.addPlayer(socket.id,username)
   socket.emit('bootstrap', game)
 
   socket.broadcast.emit('player-update', {
     socketId: socket.id,
-    newState: playerState
+    newState: playerState,
+    username
   })
 
   socket.on('player-move', (direction) => {
@@ -176,11 +188,12 @@ function createGame() {
     clearScores
   }
 
-  function addPlayer(socketId) {
+  function addPlayer(socketId,username) {
     return game.players[socketId] = {
       x: Math.floor(Math.random() * game.canvasWidth),
       y: Math.floor(Math.random() * game.canvasHeight),
-      score: 0
+      score: 0,
+      username
     }
   }
 

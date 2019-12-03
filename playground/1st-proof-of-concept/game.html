@@ -281,7 +281,8 @@
                 const player = game.players[socketId]
                 scoreArray.push({
                     socketId: socketId,
-                    score: player.score
+                    score: player.score,
+                    username: player.username
                 })
             }
 
@@ -303,7 +304,7 @@
 
                 scoreTableInnerHTML += `
                         <tr class="${ socket.id === score.socketId ? 'current-player' : ''}">
-                            <td class="socket-id">${score.socketId}</td>
+                            <td class="socket-id">${score.username}</td>
                             <td class="score-value">${score.score}</td>
                         </tr>
                     `

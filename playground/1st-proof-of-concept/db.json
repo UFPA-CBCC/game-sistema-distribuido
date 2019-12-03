@@ -7,6 +7,18 @@
     {
       "username": "user",
       "password": "$2b$10$ZRw3uzt/ab4F3j90T1bFsey9V.Fb3jEb0MDhjpolMTsSYAhe7goSC"
+    },
+    {
+      "username": "uriel",
+      "password": "$2b$10$z7Qq/zZEDPCN0Ux2j5LoGus/vRcvSRmFk./oKa04rAr5fN2YtpXrG"
+    },
+    {
+      "username": "joaopedromoraes",
+      "password": "$2b$10$zDWtheQ2YBEz/uqOe8otNOtrROB1ibUniK/nT7lsdYXsHUSHfY./u"
+    },
+    {
+      "username": "josivaldo",
+      "password": "$2b$10$tp87FPPX3wUtZtEp9Yp6UuRhwjqS8RSW/XHTim9/FGOHg2/pUEiS6"
     }
   ]
 }

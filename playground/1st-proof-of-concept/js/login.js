@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded",(event)=>{
     const loginButton = document.getElementById('login')
     const loginModel = document.getElementById('login-model')
     const signInModel = document.getElementById('sign-in-model')
+
+    checkAuth()
+
     signInButton.addEventListener('click',(event=>{
         event.preventDefault()
         fadeOutElement(loginModel).then(()=>{
@@ -61,7 +64,7 @@ document.addEventListener("DOMContentLoaded",(event)=>{
         headers:PostHeaders
       }).then(res=>{
         if(res.status === 200){
-          location='/'
+          location='/game'
         }
       })
     })
@@ -83,4 +86,18 @@ function fadeInElement(element){
     element.style.animationDuration = '2s'
     element.style.display="inline"
 
+}
+
+function checkAuth(){
+  let cookies = document.cookie.split(';')
+  let token = cookies.filter(val=>{
+    const value = val.split('=')
+    if(value[0] === 'accessToken'){
+      return true
+    }
+  })
+  token = token[0].split('=')[1]
+  if(token){
+    location='/game'
+  }
 }
