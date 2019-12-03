@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login - Jogo</title>
     <link rel="stylesheet" href="./css/login.css">
-    <link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
 </head>
 <body class="background">
     <section class="planet-glow"></section>
     <div id="login-model">
         <h2 class="center-text fade-in">Por favor faça o login</h2>
         <section class="centered-box fade-in">
-            <form id="login-form">
+            <div id="login-form">
                 <p class="label">Usuário</p>
                 <input id="username" type="text">
                 <p class="label">Senha</p>
@@ -22,13 +22,13 @@
                 <br/>
                 <button id="sign-in" class="login-button">Cadastro</button>
                 <button id="login" class="login-button">Entrar</button>
-            </form>
+            </div>
         </section>
     </div>
     <div id="sign-in-model" class="modal">
         <h2 class="center-text">Cadastro</h2>
         <div class='centered-box'>
-            <form id="sign-in-form">
+            <div id="sign-in-form">
                     <p class="label">Nome de usuario</p>
                     <input type="text" id="register-username">
                     <p class="label">Senha</p>
@@ -37,7 +37,7 @@
                     <br />
                     <button id="back-to-login" class="login-button">Voltar login</button>
                     <button id="sign-in-submit" class="login-button">Cadastrar</button>
-            </form>
+            </div>
         </div>
     </div>
     <script type="module" src="/js/login.js"></script>

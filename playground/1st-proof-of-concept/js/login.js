@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded",(event)=>{
     const loginModel = document.getElementById('login-model')
     const signInModel = document.getElementById('sign-in-model')
 
-    checkAuth()
 
     signInButton.addEventListener('click',(event=>{
         event.preventDefault()
@@ -68,7 +67,7 @@ document.addEventListener("DOMContentLoaded",(event)=>{
         }
       })
     })
-
+    checkAuth()
 })
 
 function fadeOutElement(element){
@@ -88,7 +87,7 @@ function fadeInElement(element){
 
 }
 
-function checkAuth(){
+async function checkAuth(){
   let cookies = document.cookie.split(';')
   let token = cookies.filter(val=>{
     const value = val.split('=')

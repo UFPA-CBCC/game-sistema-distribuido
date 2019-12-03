@@ -35,6 +35,9 @@ webApp.get('/css/login.css', function(req,res) {
 webApp.get('/assets/login-wallpaper.jpg', function(req,res) {
   res.sendFile(__dirname+'/assets/login-wallpaper.jpg')
 })
+webApp.get('/assets/login-wallpaper-2.jpg', function(req,res) {
+  res.sendFile(__dirname+'/assets/login-wallpaper-2.jpg')
+})
 webApp.get('/js/login.js', function(req,res) {
   res.sendFile(__dirname+'/js/login.js')
 })

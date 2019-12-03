@@ -37,7 +37,7 @@ input{
         opacity: 0%;
     }
     to{
-        opacity:100%; 
+        opacity:100%;
     }
    }
 
@@ -46,7 +46,7 @@ input{
         opacity: 100%;
     }
     to{
-        opacity:0%; 
+        opacity:0%;
     }
    }
 .login-button{
@@ -88,3 +88,23 @@ input{
         box-shadow: 0 0 0 0 rgba(102, 38, 221, 0);
     }
   }
+
+@media (max-width: 800px)
+{
+  .planet-glow{
+    width: 300px;
+    height: 285px;
+    position: absolute;
+    left: 48.5%;
+    top:6%;
+    border-radius: 100%;
+    animation-duration: 1s;
+    animation-name: pulsePlanet;
+    animation-iteration-count: infinite;
+    z-index: -1;
+}
+  .background{
+    background-image: url('/assets/login-wallpaper-2.jpg');
+    margin-top: 10em;
+}
+}
