@@ -24,10 +24,6 @@ webApp.post('/api/register', userRoutes.register)
 // login
 webApp.post('/api/login', userRoutes.login)
 
-webApp.get('/login', function(req,res) {
-  res.sendFile(__dirname+'/login.html')
-})
-
 webApp.get('/css/login.css', function(req,res) {
   res.sendFile(__dirname+'/css/login.css')
 })
@@ -41,6 +37,9 @@ webApp.get('/assets/login-wallpaper-2.jpg', function(req,res) {
 webApp.get('/js/login.js', function(req,res) {
   res.sendFile(__dirname+'/js/login.js')
 })
+webApp.get('/', function(req, res){
+  res.sendFile(__dirname+'/login.html')
+})
 
 webApp.use(cookieParser(), userRoutes.authz)
 
@@ -53,15 +52,12 @@ db.defaults({ users: [] })
 const game = createGame()
 let maxConcurrentConnections = 15
 
-webApp.get('/', function(req, res){
-  res.sendFile(__dirname+'/login.html')
-})
 webApp.get('/game', function(req, res){
   res.sendFile(__dirname+'/game.html')
 })
 
 // Coisas que só uma POC vai conhecer
-webApp.get('/a31ecc0596d72f84e5ee403ddcacb3dea94ce0803fc9e6dc2eca1fbabae49a3e3a31ecc0596d72f84e5ee40d0cacb3dea94ce0803fc9e6dc2ecfdfdbabae49a3e3', function(req, res){
+webApp.get('/admin', function(req, res){
   res.sendFile(__dirname + '/game-admin.html')
 })
 
